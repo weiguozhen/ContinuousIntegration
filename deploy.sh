@@ -1,5 +1,4 @@
 #!/bin/bash
-BUILD_ID=DONTKILLME
 #将项目拷贝到tomcat目录下
 cp -r /root/workspace/ContinuousIntegration/Shopping /opt/apache-tomcat-7.0.77/webapps
 #登陆数据库删除库导入库
