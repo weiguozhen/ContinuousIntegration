@@ -1,6 +1,6 @@
 #!/bin/bash
 #将项目拷贝到tomcat目录下
-
+source /etc/profile
 cp -r /root/workspace/ContinuousIntegration/Shopping /opt/apache-tomcat-7.0.77/webapps
 #登陆数据库删除库导入库
 mysql="mysql --defaults-extra-file=/root/.my.cnf"
@@ -15,4 +15,4 @@ $mysql -e "$sq2"
 #export JENKINS_NODE_COOKIE=dontkillme
 #BUILD_ID=DONTKILLME
 #/opt/apache-tomcat-7.0.77/bin/startup.sh
-sh 'JENKINS_NODE_COOKIE=dontKillMe && nohup /opt/apache-tomcat-7.0.77/bin/startup.sh &'
+sh 'nohup /opt/apache-tomcat-7.0.77/bin/startup.sh &'
