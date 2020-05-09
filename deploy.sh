@@ -8,6 +8,6 @@ sq2="source /root/workspace/ContinuousIntegration/db_shopping.sql"
 $mysql -e "$sq1"
 $mysql -e "$sq2"
 #关闭tomcat服务
-shutdown.sh
+sh shutdown.sh
 #开启tomcat服务
-startup.sh
+sh startup.sh
