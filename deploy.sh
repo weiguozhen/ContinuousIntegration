@@ -4,7 +4,7 @@ cp -r /root/workspace/ContinuousIntegration/Shopping /opt/apache-tomcat-7.0.77/w
 #登陆数据库删除库导入库
 mysql="mysql --defaults-extra-file=/root/.my.cnf"
 sq1="drop database if exists db_shopping"
-sq2="source /home/wgz/db_shopping.sql"
+sq2="source /root/workspace/ContinuousIntegration/db_shopping.sql"
 $mysql -e "$sq1"
 $mysql -e "$sq2"
 #关闭tomcat服务
