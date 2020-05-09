@@ -5,6 +5,6 @@ node('Centos'){
     }
     stage('部署'){
         //执行运行脚本 run.sh
-        sh 'sh ./deploy.sh'
+        sh 'cd /root/workspace/ContinuousIntegration/ && sh ./deploy.sh'
     }
 }
