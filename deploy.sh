@@ -15,4 +15,4 @@ $mysql -e "$sq2"
 #export JENKINS_NODE_COOKIE=dontkillme
 #BUILD_ID=DONTKILLME
 #/opt/apache-tomcat-7.0.77/bin/startup.sh
-sh 'nohup /opt/apache-tomcat-7.0.77/bin/startup.sh &'
+/opt/apache-tomcat-7.0.77/bin/startup.sh
