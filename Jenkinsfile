@@ -6,7 +6,5 @@ node('Centos'){
     stage('部署'){
         //执行运行脚本 run.sh
         sh 'cd /root/workspace/ContinuousIntegration/ && sh ./deploy.sh'
-	BUILD_ID=DONTKILLME
-	sh 'nohup /opt/apache-tomcat-7.0.77/bin/startup.sh >& run.log &'
     }
 }
