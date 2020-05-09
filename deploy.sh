@@ -11,4 +11,4 @@ $mysql -e "$sq2"
 #关闭tomcat服务
 #sh /opt/apache-tomcat-7.0.77/bin/shutdown.sh
 #开启tomcat服务
-/opt/apache-tomcat-7.0.77/bin/startup.sh
+nohup /opt/apache-tomcat-7.0.77/bin/startup.sh &
