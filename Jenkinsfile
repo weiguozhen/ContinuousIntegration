@@ -10,7 +10,8 @@ node('Centos'){
 		export EXEC=/home/wgz/usr/apache-tomcat-7/bin/catalina.sh
                 $EXEC stop
                 sleep 5
-                JENKINS_NODE_COOKIE=dontKillMe $EXEC start
+                JENKINS_NODE_COOKIE=dontKillMe nohup $EXEC start &
+		sleep 30
 	'''
     }
 }
