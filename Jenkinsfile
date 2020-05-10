@@ -7,6 +7,6 @@ node('Centos'){
         //执行运行脚本 run.sh
 	sh 'source /etc/profile && source ~/.bash_profile && env'
         sh 'cd /root/workspace/ContinuousIntegration/ && sh ./deploy.sh'
-	sh 'sh ./startup.sh'
+	sh 'startup.sh'
     }
 }
