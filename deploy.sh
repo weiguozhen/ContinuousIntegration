@@ -1,5 +1,5 @@
 #!/bin/bash
-export BUILD_ID=dontKillMe #必须加
+#export BUILD_ID=dontKillMe #必须加
 #TOMCAT_PID=`ps aux | grep 'tomcat' | grep -v grep | awk '{print $2}'`
 TOMCATTHREAD=`ps aux | grep 'tomcat' | grep -v grep`
 if test -z "$TOMCATTHREAD"
@@ -21,7 +21,7 @@ fi
     $mysql -e "$sq1"
     $mysql -e "$sq2"
     
-    nohup sh /home/wgz/usr/apache-tomcat-7/bin/startup.sh &
+    JENKINS_NODE_COOKIE=dontKillMe nohup sh /home/wgz/usr/apache-tomcat-7/bin/startup.sh &
     sleep 15
     echo "ok ma"
 #BUILD_ID=dontKillMe
