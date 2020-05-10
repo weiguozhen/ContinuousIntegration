@@ -20,6 +20,6 @@ fi
     sq2="source /root/workspace/ContinuousIntegration/db_shopping.sql"
     $mysql -e "$sq1"
     $mysql -e "$sq2"
-    export EXEC=/opt/apache-tomcat-7/bin/startup.sh
-    nohup $EXEC start >& /tmp/run.log &
+    
+    nohup sh /home/wgz/usr/apache-tomcat-7/bin/startup.sh >& /tmp/run.log &
 #BUILD_ID=dontKillMe
