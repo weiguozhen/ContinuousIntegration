@@ -9,8 +9,8 @@ $mysql -e "$sq1"
 $mysql -e "$sq2"
 
 
-
-export EXEC=/opt/apache-tomcat-7.0.77/bin/catalina.sh
-$EXEC stop
-sleep 5
-BUILD_ID=dontKillMe $EXEC start
+#
+#export EXEC=/opt/apache-tomcat-7.0.77/bin/catalina.sh
+#$EXEC stop
+#sleep 5
+#BUILD_ID=dontKillMe $EXEC start
