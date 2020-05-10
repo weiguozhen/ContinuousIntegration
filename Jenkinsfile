@@ -6,6 +6,6 @@ node('Centos'){
     stage('部署'){
         //执行运行脚本 run.sh
         sh 'cd /root/workspace/ContinuousIntegration/ && sh ./deploy.sh'
-	sh '(source /etc/profile;source ~/.bash_profile;sh ./startup.sh)'
+	sh '(source /etc/profile;source ~/.bash_profile;sh /opt/apache-tomcat-7.0.77/bin//startup.sh)'
     }
 }
