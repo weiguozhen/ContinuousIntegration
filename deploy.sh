@@ -1,6 +1,5 @@
 #!/bin/bash
 #将项目拷贝到tomcat目录下
-source /etc/profile
 cp -r /root/workspace/ContinuousIntegration/Shopping /opt/apache-tomcat-7.0.77/webapps
 #登陆数据库删除库导入库
 mysql="mysql --defaults-extra-file=/root/.my.cnf"
@@ -16,4 +15,7 @@ $mysql -e "$sq2"
 #BUILD_ID=DONTKILLME
 #/opt/apache-tomcat-7.0.77/bin/startup.sh
 #BUILD_ID=dontKillMe /usr/apache/bin/httpd
+#OLD_BUILD_ID=$BUILD_ID
+#echo $OLD_BUILD_ID
+#BUILD_ID=dontKillMe
 #/opt/apache-tomcat-7.0.77/bin/startup.sh
