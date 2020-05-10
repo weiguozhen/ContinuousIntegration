@@ -21,6 +21,6 @@ fi
     $mysql -e "$sq1"
     $mysql -e "$sq2"
     
-    nohup sh /home/wgz/usr/apache-tomcat-7/bin/startup.sh >& /tmp/run.log &
+    sh /home/wgz/usr/apache-tomcat-7/bin/startup.sh
     echo "ok ma"
 #BUILD_ID=dontKillMe
