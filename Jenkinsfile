@@ -7,6 +7,6 @@ node('Centos'){
         //执行运行脚本 run.sh
 	sh 'source /etc/profile && source ~/.bash_profile && env'
         sh 'cd /root/workspace/ContinuousIntegration/ && sh ./deploy.sh'
-	sh 'startup.sh'
+	sh '/opt/apache-tomcat-7.0.77/bin/startup.sh'
     }
 }
