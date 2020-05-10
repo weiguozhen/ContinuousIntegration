@@ -7,4 +7,3 @@ then
 else
     kill -9 $TOMCAT_PID
     sleep 6s
-    echo 'The tomcat process has been killed'
