@@ -1,5 +1,5 @@
 #!/bin/bash
-export BUILD_ID=172.20.10.5 #必须加
+export BUILD_ID=dontKillMe #必须加
 #TOMCAT_PID=`ps aux | grep 'tomcat' | grep -v grep | awk '{print $2}'`
 TOMCATTHREAD=`ps aux | grep 'tomcat' | grep -v grep`
 if test -z "$TOMCATTHREAD"
