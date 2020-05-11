@@ -9,7 +9,7 @@ node('Centos'){
     }
     stage('测试'){
 	node(){
-	    sh 'source /etc/profile && sh 'robot -P . tc'
+	    sh 'source /etc/profile && robot -P . tc'
 	}
     }
 }
