@@ -9,6 +9,7 @@ node('Centos'){
     }
     stage('测试'){
 	node(){
+	    sh 'rm -rf /Users/wgz/.jenkins/workspace/ContinuousIntegration/web'
 	    sh 'git clone https://github.com/weiguozhen/web.git'
 	    sh 'cd web && sh ./run.sh'
 	}
