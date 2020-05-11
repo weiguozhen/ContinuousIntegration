@@ -1,12 +1,14 @@
 #!/usr/bin/env groovy
 pipeline{
-    agent{label 'Centos'}
+//     agent{label 'Centos'}
+    agent{label 'master'}
     environment {
         sendmail = 'yes'
     }
     triggers { pollSCM('* * * * *') }
     stages {
         stage('构建') {
+            agent{label 'Centos'}
             steps {
                 checkout scm
                 //checkout([$class: 'GitSCM', branches: [[name: ${git_branch}]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: ${git_key}, url: ${git_url}]]])
@@ -14,27 +16,24 @@ pipeline{
         }
 
         stage('部署'){
+            agent{label 'Centos'}
             steps {
                 sh 'cd /root/workspace/ContinuousIntegration/ && sh ./deploy.sh'
             }
         }
         stage('测试'){
-	    agent{label 'master'}
             steps{
                 sh 'rm -rf /Users/wgz/.jenkins/workspace/ContinuousIntegration/web'
-	        sh 'git clone https://github.com/weiguozhen/web.git'
-	        sh 'cd web && sh ./run.sh'
+	            sh 'git clone https://github.com/weiguozhen/web.git'
+	            sh 'cd web && sh ./run.sh'
             }
         }
 
     }
     post{
-
-
         success {
             script {
                 if (sendmail == 'yes') {
-            agent{label 'master'}
             sh 'pwd'
             emailext attachmentsPattern: '/web/*.html', body: '''<body leftmargin="8" marginwidth="0" topmargin="8" marginheight="4"
     offset="0">
