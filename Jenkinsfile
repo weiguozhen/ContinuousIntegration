@@ -34,7 +34,7 @@ pipeline{
         success {
             script {
                 if (sendmail == 'yes') {
-           emailext body: '''<body leftmargin="8" marginwidth="0" topmargin="8" marginheight="4"
+           emailext attachmentsPattern: '/web/*.html', body: '''<body leftmargin="8" marginwidth="0" topmargin="8" marginheight="4"
     offset="0">
     <table width="95%" cellpadding="0" cellspacing="0"
         style="font-size: 11pt; font-family: Tahoma, Arial, Helvetica, sans-serif">
@@ -54,8 +54,7 @@ pipeline{
                         <li>GIT 地址：https://github.com/weiguozhen/ContinuousIntegration.git</li>
                         <li>GIT 分支：master</li>
                         <li>变更记录: ${CHANGES,showPaths=true,showDependencies=true,format="<pre><ul><li>提交ID: %r</li><li>提交人：%a</li><li>提交时间：%d</li><li>提交信息：%m</li><li>提交文件：<br />%p</li></ul></pre>",pathFormat="         %p <br />"}
-                        <li><font color="#0B610B"><font size="6">测试结果报告</font></font> ${FILE, path="/Users/wgz/.jenkins/workspace/ContinuousIntegration/web/report.html"}
-                        <li>${FILE, path="/Users/wgz/.jenkins/workspace/ContinuousIntegration/web/report.html"}
+                        <li><font color="#0B610B">测试结果报告见附件📎</font></li>
                     </div>
                 </ul>
             </td>
