@@ -13,7 +13,8 @@ node('Centos'){
 	node(){
 		sh 'rm -rf /Users/wgz/.jenkins/workspace/ContinuousIntegration/web'
 		sh 'git clone https://github.com/weiguozhen/web.git'
-		sh 'robot -P ./web /web/tc'
+		sh 'source etc/project'
+		sh 'robot -P . tc'
 	}
     }
 }
