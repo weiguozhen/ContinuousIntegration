@@ -4,6 +4,7 @@ pipeline{
     agent{label 'master'}
     environment {
         sendmail = 'yes'
+        gitpullerr = 'noerr'
     }
     triggers { pollSCM('* * * * *') }
     stages {
@@ -110,7 +111,7 @@ pipeline{
     </table>
 </body>
 </html>
-''', subject: '${PROJECT_NAME}', to: 'aaa@sina.com'
+''', subject: '${PROJECT_NAME}', to: '1272235678@qq.com'
             }else {
                 echo 'scm pull error ignore send mail'
             }
