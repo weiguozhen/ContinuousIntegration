@@ -34,6 +34,7 @@ pipeline{
         success {
             script {
                 if (sendmail == 'yes') {
+            sh 'pwd'
             emailext attachmentsPattern: '*.html', body: '''<body leftmargin="8" marginwidth="0" topmargin="8" marginheight="4"
     offset="0">
     <table width="95%" cellpadding="0" cellspacing="0"
