@@ -93,8 +93,8 @@ pipeline{
                     <li>构建名称：${JOB_NAME}</li>
                     <li>构建结果: <span style="color:red"> ${BUILD_STATUS}</span></li>
                     <li>构建编号：${BUILD_NUMBER}  </li>
-                    <li>GIT 地址：${git_url}</li>
-                    <li>GIT 分支：${git_branch}</li>
+                    <li>GIT 地址：https://github.com/weiguozhen/ContinuousIntegration.git</li>
+                    <li>GIT 分支：master</li>
                     <li>变更记录: ${CHANGES,showPaths=true,showDependencies=true,format="<pre><ul><li>提交ID: %r</li><li>提交人：%a</li><li>提交时间：%d</li><li>提交信息：%m</li><li>提交文件：%p</li></ul></pre>",pathFormat="%p <br />"}
                 </ul>
             </td>
