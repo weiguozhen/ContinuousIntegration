@@ -5,7 +5,7 @@ pipeline{
 //         gitpullerr = 'noerr'
         sendmail = 'yes'
         git_url = 'https://github.com/weiguozhen/ContinuousIntegration.git'
-        git_key = '50e27d86-37e0-4a5b-82db-4ea5ea9492bf'
+//         git_key = '50e27d86-37e0-4a5b-82db-4ea5ea9492bf'
         git_branch = 'dev'
     }
     triggers { pollSCM('* * * * *') }
@@ -20,7 +20,6 @@ pipeline{
         stage('部署'){
             steps {
                 sh 'cd /root/workspace/ContinuousIntegration/ && sh ./deploy.sh'
-                echo "$gitpullerr"
             }
         }
         stage('测试'){
