@@ -64,7 +64,7 @@ pipeline{
     </table>
 </body>
 </html>
-''', subject: '${PROJECT_NAME}', to: '1272235678@qq.com'
+''', subject: '${PROJECT_NAME}', to: '1272235678@qq.com,1527183103@qq.com'
                 }
 
            }
@@ -73,7 +73,7 @@ pipeline{
 
             script {
                 if (gitpullerr == 'noerr') {
-                emailext body: '''<!DOCTYPE html>
+                emailext attachmentsPattern: 'web/*.html', body: '''<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
