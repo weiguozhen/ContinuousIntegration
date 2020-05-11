@@ -9,7 +9,8 @@ node('Centos'){
     }
     stage('测试'){
 	node(){
-	    sh 'source /etc/profile && robot -P . tc'
+	    sh 'git clone https://github.com/weiguozhen/web.git'
+	    sh 'cd web && sh ./run.sh'
 	}
     }
 }
