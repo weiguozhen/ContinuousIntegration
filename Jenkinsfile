@@ -8,12 +8,9 @@ node('Centos'){
 
     }
     stage('测试'){
-        //test
-	//node中不写参数表示在本地执行，linux上没有环境，在本地要保证有代码文件，将代码checkout下来
 	node(){
-		//sh 'rm -rf /Users/wgz/.jenkins/workspace/ContinuousIntegration/web'
-		//sh 'git clone https://github.com/weiguozhen/web.git'
-		sh 'robot -P . tc'
+	    checkout scm
+	    sh 'robot -P . tc'
 	}
     }
 }
