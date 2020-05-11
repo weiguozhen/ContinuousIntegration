@@ -54,8 +54,8 @@ pipeline{
                         <li>GIT 地址：https://github.com/weiguozhen/ContinuousIntegration.git</li>
                         <li>GIT 分支：master</li>
                         <li>变更记录: ${CHANGES,showPaths=true,showDependencies=true,format="<pre><ul><li>提交ID: %r</li><li>提交人：%a</li><li>提交时间：%d</li><li>提交信息：%m</li><li>提交文件：<br />%p</li></ul></pre>",pathFormat="         %p <br />"}
-                        <li><font color="#0B610B"><font size="6">测试结果报告</font></font> ${FILE, path="${WORKSPACE}/ContinuousIntegration/web/log.html"}<li>
-                        <li>${FILE, path="${WORKSPACE}/ContinuousIntegration/web/report.html"}<li>
+                        <li><font color="#0B610B"><font size="6">测试结果报告</font></font> ${FILE, path="${env.WORKSPACE}/ContinuousIntegration/web/log.html"}<li>
+                        <li>${FILE, path="${env.WORKSPACE}/ContinuousIntegration/web/report.html"}<li>
                     </div>
                 </ul>
             </td>
