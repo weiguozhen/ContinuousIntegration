@@ -2,8 +2,6 @@
 pipeline{
     agent{label 'Centos'}
     environment {
-        def git_url = 'https://github.com/weiguozhen/ContinuousIntegration.git'
-        def git_branch = 'dev'
         sendmail = 'yes'
     }
     triggers { pollSCM('* * * * *') }
@@ -53,8 +51,8 @@ pipeline{
                         <li>构建结果: <span style="color:green"> Successful </span></li>
                         <li>构建编号：${BUILD_NUMBER}</li>
                         <li>触发原因：${CAUSE}</li>
-                        <li>GIT 地址：${git_url}</li>
-                        <li>GIT 分支：${git_branch}</li>
+                        <li>GIT 地址：https://github.com/weiguozhen/ContinuousIntegration.git</li>
+                        <li>GIT 分支：master</li>
                         <li>变更记录: ${CHANGES,showPaths=true,showDependencies=true,format="<pre><ul><li>提交ID: %r</li><li>提交人：%a</li><li>提交时间：%d</li><li>提交信息：%m</li><li>提交文件：<br />%p</li></ul></pre>",pathFormat="         %p <br />"}
                         <li><font color="#0B610B"><font size="6">测试结果报告</font></font> ${FILE, path="/opt/htdocs/jenkins/reports/soa/html/${parameter}/${parameter_name}_Report.html"}
                     </div>
